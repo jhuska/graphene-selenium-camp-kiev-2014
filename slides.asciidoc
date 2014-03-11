@@ -1,0 +1,423 @@
+Introduction to functional testing with Arquillian Graphene
+===========================================================
+Juraj Húska
+v1.0, Feb 28, 2013
+:title: Introduction to Arquillian Graphene
+:copywrite: CC BY-SA 2.0
+:website: http://arquillian.org
+:slidesurl:
+:imagesdir: images
+:backend: dzslides
+:linkcss:
+:dzslides-style: stormy
+:dzslides-transition: fade
+:dzslides-highlight: monokai
+:dzslides-fonts: family=Signika:400,700,200,300&subset=latin,latin-ext&family=Cedarville+Cursive
+//:dzslides-fonts: family=Yanone+Kaffeesatz:400,700,200,300&&subset=latin,latin-ext&family=Cedarville+Cursive
+:syntaxoff: syntax="no-highlight"
+
+[{topic}]
+== whoami
+
+--
+* Juraj Húska
+** RichFaces QE - JBoss, Red Hat
+** Arquillian Graphene commiter
+** @j_huska
+--
+
+image:red-hat.jpg[Red Hat, 100, 100, float="right"]
+image:Richfaces_logo.gif[RichFaces, 300, 200, float="right"]
+image:jboss_logo.png[JBoss, 300, 200, float="right"]
+
+[{topic}]
+== Agenda
+
+[role="incremental text-left"]
+* Arquillian introduction
+* *Graphene introduction*
+* Graphene hottest goodies
+* *Arquillian Graphene in action*
+
+
+== \\
+
+What is Arquillian Graphene ?
+
+
+[{topic}]
+== *Writing* and maintaining tests
+
+image::development.jpg[role="pull-left stretch-x stretch-y"]
+
+[{topic}]
+== Writing and *maintaining* tests
+
+image::maintenance.jpg[role="middle"]
+
+== \\
+
+[role="pull-right"]
+* DRY
+
+image::dry.jpg[role="middle stretch-x"]
+
+[{topic}]
+== Testers
+image:tester2.jpg[role="pull-left"]
+image:tester3.jpg[role="pull-right"]
+
+[{topic}]
+== Arquillian
+
+image::ike.png[role="pull-left stretch-y"]
+
+[role="incremental text-right"]
+* Integration framework for other test tools
+* (not only) Java EE + Mobile devices, JS, REST
+* Extensible
+
+[{topic}]
+== Arquillian crash course
+
+image::deploymentScenario.png[role="middle"]
+
+[{topic}]
+== JUnit runner & client mode
+
+image::deploymentScenario1.png[role="middle"]
+
+[{topic}]
+== Injecting URL and browser
+
+image::deploymentScenario2.png[role="middle"]
+
+[{topic}]
+== Deployment definition
+
+image::deploymentScenario3.png[role="middle"]
+
+[{topic}]
+== Test method
+
+image::deploymentScenario4.png[role="middle"]
+
+== \
+
+[{statement}]
+What else Arquillian can do ?
+
+[{topic}]
+== Classpath control
+
+image::classpathControl.png[role="middle"]
+
+[{topic}]
+== Persistence
+
+image::persistenceExample.png[role="middle"]
+
+== \
+
+image::wowMoment1.jpg[role="middle"]
+
+// http://kwinkley.info/wp-content/uploads/2012/05/wow-moment1.jpg
+
+[{topic}]
+== Arquillian Graphene
+
+image::graphene-logo.png[role="pull-right"]
+
+[role="incremental text-left"]
+* WebDriver on steroids
+* *Painkiller for web UI testers*
+
+[{topic}]
+== Graphene crash course
+
+image::googleTestBasic.png[role="middle"]
+
+[{topic}]
+== Wiring up page & test
+
+image::googleTestBasic1.png[role="middle"]
+
+[{topic}]
+== Graphene test
+
+image::googleTestBasic2.png[role="middle"]
+
+== \\
+
+[{statement}]
+What is the added value of Graphene ?
+
+[{topic}]
+== @Page Objects
+
+[role="incremental text-left"]
+
+* well known WebDriver pattern
+* *make tests more readable*
+* Graphene enhances its usability
+
+[{topic}]
+== What is wrong ?
+
+image::googleTestBasic.png[role="middle"]
+
+[{topic}]
+== Page objects declaration
+
+image::googleFrontPageObject.png[role="middle"]
+
+[{topic}]
+== Page objects declaration
+
+image::googleResultPageObject.png[role="middle"]
+
+[{topic}]
+== Test with page objects
+
+image::googleTestWithPageObjects.png[role="middle"]
+
+[{topic}]
+== @Page annotation
+
+image::googleTestWithPageObjects1.png[role="middle"]
+
+[{topic}]
+== Test with page objects
+
+image::googleTestWithPageObjects2.png[role="middle"]
+
+[{topic}]
+== Improved maintenance, from this
+
+image::maintenance.jpg[role="middle"]
+
+[{topic}]
+== to this
+
+image::maintenance2.jpg[role="middle stretch-x stretch-y"]
+
+//http://picsmix.biz/wp-content/uploads/2013/08/nature-beauty-forestbridge-beauty-bridge-forest-green-man-made-nature-trees-vean2c48.jpg
+
+[{topic}]
+== Page Fragments
+
+[role="incremental text-left"]
+
+* reusability
+* *readability*
+* cross browser testing
+
+[{topic}]
+== Page fragments declaration
+
+image::autocompleteFragment.png[role="middle"]
+
+[{topic}]
+== Wiring up fragment & page
+
+image::autocompleteFragment1.png[role="middle"]
+
+[{topic}]
+== Services of fragment
+
+image::autocompleteFragment2.png[role="middle"]
+
+[{topic}]
+== Help methods of fragment
+
+image::autocompleteFragment3.png[role="middle"]
+
+[{topic}]
+== Page fragments injection
+
+image::testWithAutocompleteFragment.png[role="middle"]
+
+[{topic}]
+== Declaring fragment root element
+
+image::testWithAutocompleteFragment1.png[role="middle"]
+
+[{topic}]
+== Test with page fragments
+
+image::testWithAutocompleteFragment2.png[role="middle"]
+
+[{topic}]
+== Improved DRY, from this
+
+image::dry.jpg[role="middle stretch-x"]
+
+[{topic}]
+== to this
+
+image::dry2.png[role="middle stretch-x"]
+
+[{topic}]
+== @JQueryLocator
+
+image::jqueryLocator.png[role="middle"]
+
+[{topic}]
+== @InFrame - plain WebDriver
+
+image::inframePlainWD.png[role="middle"]
+
+[{topic}]
+== @InFrame - plain WebDriver
+
+image::inframePlainWD1.png[role="middle"]
+
+[{topic}]
+== @InFrame - plain WebDriver
+
+image::inframePlainWD2.png[role="middle"]
+
+[{topic}]
+== @InFrame - plain WebDriver
+
+image::inframePlainWD3.png[role="middle"]
+
+[{topic}]
+== @InFrame - Graphene way
+
+image::inframeGraphene.png[role="middle"]
+
+[{topic}]
+== @InFrame - Graphene way
+
+image::inframeGraphene1.png[role="middle"]
+
+[{topic}]
+== @InFrame - Graphene way
+
+image::inframeGraphene2.png[role="middle"]
+
+[{topic}]
+== What is wrong ?
+
+image::googleTestWithPageObjects.png[role="middle"]
+
+[{topic}]
+== This!
+
+image::googleTestWithPageObjectsGet.png[role="middle"]
+
+[{topic}]
+== @Location over page object declaration
+
+image::frontPageObjWithLocation.png[role="middle"]
+
+[{topic}]
+== @Location over page object declaration
+
+image::frontPageObjWithLocation1.png[role="middle"]
+
+[{topic}]
+== @InitialPage
+
+image::googleTestWithLocation.png[role="middle stretch-x"]
+
+[{topic}]
+== @InitialPage
+
+image::googleTestWithLocation1.png[role="middle stretch-x"]
+
+[{topic}]
+== Graphene.goTo
+
+image::googleTestWithGoto.png[role="middle"]
+
+[{topic}]
+== Graphene.goTo
+
+image::googleTestWithGoto2.png[role="middle"]
+
+[{topic}]
+== Interceptors
+
+image::interceptors.png[role="middle"]
+
+[{topic}]
+== JavaScrip interfaces
+
+image::jsInterceptors.png[role="middle stretch-x"]
+
+[{topic}]
+== Request guards
+
+image::guards.png[role="middle stretch-x"]
+
+[{topic}]
+== Fluent waiting API
+
+image::waiting.png[role="middle stretch-x"]
+
+[{topic}]
+== Multiple browsers
+
+image::multipleBrowsers.png[role="middle stretch-x"]
+
+[{topic}]
+== Graphene buddies
+
+[role="incremental text-left"]
+
+* Warp
+* Droidium
+
+== \\
+
+[{statement}]
+Graphene demo
+
+[role="topic"]
+== Final recap
+
+[role="incremental text-left"]
+
+* Arquillian makes integration testing a breeze
+* *Graphene improves tests readability & robustness*
+* Graphene can be used together with server asserts
+* *Graphene can be used on mobile devices*
+
+[role="topic"]
+== Do not forget
+
+[role="incremental text-left"]
+
+* We are opensourced!
+* If you miss something, file an issue request!
+* Ask on forums for support
+* Contribute to the codebase :)
+
+[{ending}, hrole="name"]
+== Get *testing* done!
+
+[role="footer"]
+arquillian.org, #arquillian
+
+[{topic}]
+== Q&A
+
+image::success.png[{middle}]
+
+[{topic}]
+== Resources
+
+// prebrat zdroje a obrazky
+
+* Images from Flickr.com
+** http://www.flickr.com/photos/fiftyfeet/2225097095/[an image by Jordan Sitkin]
+** http://www.flickr.com/photos/mfloryan/8228861493/[an image  by Marcin Florian]
+** http://www.flickr.com/photos/matthijs/3514892055/[an image by matthijs]
+** http://www.flickr.com/photos/75905404@N00/7126146307/[an image by OZinOH]
+** http://www.flickr.com/photos/wongjunhao/2598768791/[an image by Jerry Wong]
+** http://www.flickr.com/photos/87616709@N00/5281595287/[an image by Lyn Gateley]
+** http://www.flickr.com/photos/naturalnewstracker/8274059769/[ an image by Natural News Tracker]
+** http://www.flickr.com/photos/thomashawk/2681744739/[an image by Thomas Hawk]
+** http://www.flickr.com/photos/volk/3402203600[an image by Willy Volk]
